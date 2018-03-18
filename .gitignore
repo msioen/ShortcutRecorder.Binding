@@ -1,0 +1,25 @@
+.DS_Store
+*~
+*.userprefs
+*.pidb
+*.suo
+bin
+obj
+*.user
+
+*.nupkg
+nuspec/*.dll
+nuspec/*.mdb
+
+packages/*
+packages/repositories.config
+AppPackages/
+
+TestResult.xml
+*Resource.designer.cs
+
+# Generated files
+bin/
+gen/
+out/
+.vs

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata>
+		<id>ShortcutRecorder.Binding</id>
+		<version>2.17.2.1</version>
+		<title>ShortcutRecorder - Xamarin OS X Binding</title>
+		<authors>Michiel Sioen</authors>
+		<owners>Michiel Sioen</owners>
+		<licenseUrl>https://github.com/msioen/ShortcutRecorder.Binding/blob/master/LICENSE</licenseUrl>
+		<projectUrl>https://github.com/msioen/ShortcutRecorder.Binding</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Mac user interface control to record shortcuts</description>
+		<tags>xamarin, xamarin.mac, mac, shortcut</tags>
+		<dependencies>
+		</dependencies>
+	</metadata>
+	<files>
+
+	<file src="..\ShortcutRecorder.Binding\bin\Release\ShortcutRecorder.Binding.dll" target="lib\xamarinmac20\ShortcutRecorder.Binding.dll" />
+
+	</files>
+</package>

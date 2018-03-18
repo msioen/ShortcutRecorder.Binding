@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortcutRecorder.Binding", "ShortcutRecorder.Binding\ShortcutRecorder.Binding.csproj", "{932A1975-2B2B-4421-AEF1-9E0272AAA9F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortcutRecorder.Binding.Test", "ShortcutRecorder.Binding.Test\ShortcutRecorder.Binding.Test.csproj", "{674271F9-00DF-403A-B0C9-74FFFA3A5FAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{932A1975-2B2B-4421-AEF1-9E0272AAA9F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{932A1975-2B2B-4421-AEF1-9E0272AAA9F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{932A1975-2B2B-4421-AEF1-9E0272AAA9F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{932A1975-2B2B-4421-AEF1-9E0272AAA9F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{674271F9-00DF-403A-B0C9-74FFFA3A5FAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{674271F9-00DF-403A-B0C9-74FFFA3A5FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{674271F9-00DF-403A-B0C9-74FFFA3A5FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{674271F9-00DF-403A-B0C9-74FFFA3A5FAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
