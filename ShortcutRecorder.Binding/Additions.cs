@@ -44,6 +44,21 @@ namespace ShortcutRecorder
                 return _NSEnabledBinding;
             }
         }
+
+        static NSString _NSValueTransformerBindingOption;
+        public static NSString NSValueTransformerBindingOption
+        {
+            get
+            {
+                if (_NSValueTransformerBindingOption == null)
+                {
+                    var AppKit_libraryHandle = Dlfcn.dlopen(ObjCRuntime.Constants.AppKitLibrary, 0);
+                    _NSValueTransformerBindingOption = Dlfcn.GetStringConstant(AppKit_libraryHandle, "NSValueTransformerBindingOption");
+                    Dlfcn.dlclose(AppKit_libraryHandle);
+                }
+                return _NSValueTransformerBindingOption;
+            }
+        }
     }
 
     public static partial class CFunctions

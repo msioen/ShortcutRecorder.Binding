@@ -82,6 +82,10 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="ViewController.cs" />
     <Compile Include="ViewController.designer.cs" />
+    <Compile Include="AppDelegate.designer.cs">
+      <DependentUpon>AppDelegate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
@@ -90,6 +94,10 @@
     <ProjectReference Include="..\ShortcutRecorder.Binding\ShortcutRecorder.Binding.csproj">
       <Project>{932A1975-2B2B-4421-AEF1-9E0272AAA9F4}</Project>
       <Name>ShortcutRecorder.Binding</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PTHotKey.Binding\PTHotKey.Binding.csproj">
+      <Project>{0C67E044-E11A-46F6-BE4E-F2E8BDEB5292}</Project>
+      <Name>PTHotKey.Binding</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />

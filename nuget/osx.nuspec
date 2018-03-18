@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata>
 		<id>ShortcutRecorder.Binding</id>
-		<version>2.17.2.1</version>
+		<version>2.17.2.2</version>
 		<title>ShortcutRecorder - Xamarin OS X Binding</title>
 		<authors>Michiel Sioen</authors>
 		<owners>Michiel Sioen</owners>
@@ -16,7 +16,8 @@
 	</metadata>
 	<files>
 
-	<file src="..\ShortcutRecorder.Binding\bin\Release\ShortcutRecorder.Binding.dll" target="lib\xamarinmac20\ShortcutRecorder.Binding.dll" />
+		<file src="..\ShortcutRecorder.Binding\bin\Release\ShortcutRecorder.Binding.dll" target="lib\xamarinmac20\ShortcutRecorder.Binding.dll" />
+		<file src="..\PTHotKey.Binding\bin\Release\PTHotKey.Binding.dll" target="lib\xamarinmac20\PTHotKey.Binding.dll" />
 
 	</files>
 </package>

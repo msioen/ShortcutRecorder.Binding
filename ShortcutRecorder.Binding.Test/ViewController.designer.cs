@@ -16,6 +16,9 @@ namespace ShortcutRecorder.Binding.Test
 		ShortcutRecorder.SRRecorderControl globalPingShortcutRecorder { get; set; }
 
 		[Outlet]
+		AppKit.NSButton pingButton { get; set; }
+
+		[Outlet]
 		ShortcutRecorder.SRRecorderControl pingItemShortcutRecorder { get; set; }
 
 		[Outlet]
@@ -23,11 +26,6 @@ namespace ShortcutRecorder.Binding.Test
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (pingShortcutRecorder != null) {
-				pingShortcutRecorder.Dispose ();
-				pingShortcutRecorder = null;
-			}
-
 			if (globalPingShortcutRecorder != null) {
 				globalPingShortcutRecorder.Dispose ();
 				globalPingShortcutRecorder = null;
@@ -36,6 +34,16 @@ namespace ShortcutRecorder.Binding.Test
 			if (pingItemShortcutRecorder != null) {
 				pingItemShortcutRecorder.Dispose ();
 				pingItemShortcutRecorder = null;
+			}
+
+			if (pingShortcutRecorder != null) {
+				pingShortcutRecorder.Dispose ();
+				pingShortcutRecorder = null;
+			}
+
+			if (pingButton != null) {
+				pingButton.Dispose ();
+				pingButton = null;
 			}
 		}
 	}

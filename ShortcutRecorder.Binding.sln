@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortcutRecorder.Binding", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortcutRecorder.Binding.Test", "ShortcutRecorder.Binding.Test\ShortcutRecorder.Binding.Test.csproj", "{674271F9-00DF-403A-B0C9-74FFFA3A5FAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTHotKey.Binding", "PTHotKey.Binding\PTHotKey.Binding.csproj", "{0C67E044-E11A-46F6-BE4E-F2E8BDEB5292}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,5 +21,9 @@ Global
 		{674271F9-00DF-403A-B0C9-74FFFA3A5FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{674271F9-00DF-403A-B0C9-74FFFA3A5FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{674271F9-00DF-403A-B0C9-74FFFA3A5FAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C67E044-E11A-46F6-BE4E-F2E8BDEB5292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C67E044-E11A-46F6-BE4E-F2E8BDEB5292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C67E044-E11A-46F6-BE4E-F2E8BDEB5292}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C67E044-E11A-46F6-BE4E-F2E8BDEB5292}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

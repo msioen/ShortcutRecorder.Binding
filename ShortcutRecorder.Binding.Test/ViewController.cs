@@ -2,6 +2,7 @@
 
 using AppKit;
 using Foundation;
+using PTHotKey;
 
 namespace ShortcutRecorder.Binding.Test
 {
@@ -28,6 +29,10 @@ namespace ShortcutRecorder.Binding.Test
             _validator = new SRValidator(this);
             _controlDelegate = new MySRRecorderControlDelegate(_validator, x => PresentError(x));
 
+            pingButton.Activated += PingButton_Activated;
+
+            pingButton.BindHotKey(NSUserDefaultsController.SharedUserDefaultsController, "values.ping");
+
             pingShortcutRecorder.Delegate = _controlDelegate;
             globalPingShortcutRecorder.Delegate = _controlDelegate;
             pingItemShortcutRecorder.Delegate = _controlDelegate;
@@ -44,6 +49,43 @@ namespace ShortcutRecorder.Binding.Test
 
             globalPingShortcutRecorder.Bind(Constants.NSValueBinding, defaults, "values.globalPing", null);
             pingItemShortcutRecorder.Bind(Constants.NSValueBinding, defaults, "values.pingItem", null);
+
+            defaults.AddObserver(this, "values.globalPing", NSKeyValueObservingOptions.Initial, IntPtr.Zero);
+        }
+
+        public override void ObserveValue(NSString keyPath, NSObject ofObject, NSDictionary change, IntPtr context)
+        {
+            if (keyPath == "values.globalPing")
+            {
+                var hotKeyCenter = PTHotKeyCenter.SharedCenter;
+                var oldHotKey = hotKeyCenter.HotKeyWithIdentifier(keyPath);
+                if (oldHotKey != null)
+                {
+                    hotKeyCenter.UnregisterHotKey(oldHotKey);
+                }
+
+                var newShortcut = ofObject.ValueForKeyPath(keyPath) as NSDictionary;
+                if (newShortcut != null)
+                {
+                    var newHotKey = PTHotKey.PTHotKey.HotKeyWithIdentifier(keyPath, newShortcut, this, new ObjCRuntime.Selector("ping"));
+                    hotKeyCenter.RegisterHotKey(newHotKey);
+                }
+            }
+            else
+            {
+                base.ObserveValue(keyPath, ofObject, change, context);
+            }
+        }
+
+        void PingButton_Activated(object sender, EventArgs e)
+        {
+            Ping();
+        }
+
+        [Export("ping")]
+        void Ping()
+        {
+            NSSound.FromName("Submarine").Play();
         }
 
         #region ISRValidatorDelegate
@@ -122,11 +164,13 @@ namespace ShortcutRecorder.Binding.Test
 
         public override bool ShortcutRecorderShouldBeginRecording(SRRecorderControl aRecorder)
         {
+            PTHotKeyCenter.SharedCenter.Pause();
             return true;
         }
 
         public override void ShortcutRecorderDidEndRecording(SRRecorderControl aRecorder)
         {
+            PTHotKeyCenter.SharedCenter.Resume();
         }
 
         public override bool ShortcutRecorderShouldUnconditionallyAllowModifierFlags(SRRecorderControl aRecorder, NSEventModifierMask aModifierFlags, ushort aKeyCode)

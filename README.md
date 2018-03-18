@@ -23,3 +23,26 @@ pingShortcutRecorder.SetAllowedModifierFlags(
     newRequiredModifierFlags: (NSEventModifierMask)0,
     newAllowsEmptyModifierFlags: true);
 ```
+
+Includes framework to set global shortcuts (PTHotKey).
+
+```c#
+// bind item hotkey to key in userdefaults
+public static void BindHotKey(this NSObject target, NSObject observable, string keyPath)
+{
+	var keyOptions = new NSMutableDictionary();
+	keyOptions.SetValueForKey(new SRKeyEquivalentTransformer(), Constants.NSValueTransformerBindingOption);
+	target.Bind("keyEquivalent", observable, keyPath, keyOptions);
+
+	var keyModifierOptions = new NSMutableDictionary();
+	keyModifierOptions.SetValueForKey(new SRKeyEquivalentModifierMaskTransformer(), Constants.NSValueTransformerBindingOption);
+	target.Bind("keyEquivalentModifierMask", observable, keyPath, keyModifierOptions);
+}
+
+
+public override void AwakeFromNib()
+{
+	base.AwakeFromNib();
+	pingItem.BindHotKey(NSUserDefaultsController.SharedUserDefaultsController, "values.ping");
+}
+```

@@ -1,10 +1,10 @@
-﻿using AppKit;
+using AppKit;
 using Foundation;
 
 namespace ShortcutRecorder.Binding.Test
 {
     [Register("AppDelegate")]
-    public class AppDelegate : NSApplicationDelegate
+    public partial class AppDelegate : NSApplicationDelegate
     {
         public AppDelegate()
         {
@@ -20,9 +20,24 @@ namespace ShortcutRecorder.Binding.Test
             // Insert code here to tear down your application
         }
 
-		public override bool ApplicationShouldTerminateAfterLastWindowClosed(NSApplication sender)
-		{
+        public override bool ApplicationShouldTerminateAfterLastWindowClosed(NSApplication sender)
+        {
             return true;
-		}
-	}
+        }
+
+        public override void AwakeFromNib()
+        {
+            base.AwakeFromNib();
+
+            pingItem.Activated += PingItem_Activated;
+
+            pingItem.BindHotKey(NSUserDefaultsController.SharedUserDefaultsController, "values.pingItem");
+        }
+
+        void PingItem_Activated(object sender, System.EventArgs e)
+        {
+            NSSound.FromName("Ping").Play();
+        }
+
+    }
 }
