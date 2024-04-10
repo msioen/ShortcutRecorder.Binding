@@ -9,11 +9,11 @@ namespace ShortcutRecorder.Binding.Test
         {
             var keyOptions = new NSMutableDictionary();
             keyOptions.SetValueForKey(new SRKeyEquivalentTransformer(), Constants.NSValueTransformerBindingOption);
-            target.Bind("keyEquivalent", observable, keyPath, keyOptions);
+            target.Bind(new NSString("keyEquivalent"), observable, keyPath, keyOptions);
 
             var keyModifierOptions = new NSMutableDictionary();
             keyModifierOptions.SetValueForKey(new SRKeyEquivalentModifierMaskTransformer(), Constants.NSValueTransformerBindingOption);
-            target.Bind("keyEquivalentModifierMask", observable, keyPath, keyModifierOptions);
+            target.Bind(new NSString("keyEquivalentModifierMask"), observable, keyPath, keyModifierOptions);
         }
     }
 }

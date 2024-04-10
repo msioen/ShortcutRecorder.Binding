@@ -2,22 +2,24 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata>
 		<id>ShortcutRecorder.Binding</id>
-		<version>2.17.2.2</version>
-		<title>ShortcutRecorder - Xamarin OS X Binding</title>
+		<version>2.17.2.3</version>
+		<title>ShortcutRecorder - .NET MacOS Binding</title>
 		<authors>Michiel Sioen</authors>
 		<owners>Michiel Sioen</owners>
-		<licenseUrl>https://github.com/msioen/ShortcutRecorder.Binding/blob/master/LICENSE</licenseUrl>
+		<license type="expression">MIT</license>
 		<projectUrl>https://github.com/msioen/ShortcutRecorder.Binding</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Mac user interface control to record shortcuts</description>
-		<tags>xamarin, xamarin.mac, mac, shortcut</tags>
+		<tags>xamarin, xamarin.mac, mac, shortcut, maui mac</tags>
 		<dependencies>
+			<group targetFramework="net8.0-macOS13.0">
+			</group>
 		</dependencies>
 	</metadata>
 	<files>
 
-		<file src="..\ShortcutRecorder.Binding\bin\Release\ShortcutRecorder.Binding.dll" target="lib\xamarinmac20\ShortcutRecorder.Binding.dll" />
-		<file src="..\PTHotKey.Binding\bin\Release\PTHotKey.Binding.dll" target="lib\xamarinmac20\PTHotKey.Binding.dll" />
+		<file src="..\ShortcutRecorder.Binding\bin\Release\net8.0-macos\ShortcutRecorder.Binding.dll" target="lib\net8.0-macos13.0\ShortcutRecorder.Binding.dll" />
+		<file src="..\PTHotKey.Binding\bin\Release\net8.0-macos\PTHotKey.Binding.dll" target="lib\net8.0-macos13.0\PTHotKey.Binding.dll" />
 
 	</files>
 </package>
